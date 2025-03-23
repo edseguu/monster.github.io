@@ -84,6 +84,16 @@ body{
   width: 100%;
   z-index: 2;
 }
+@media (max-width:800px){
+  #map{
+    bottom: 3%;
+  }
+}
+@media (min-height:350px) {
+  #map{
+    height: 45vh;
+  }
+}
 
 
 
