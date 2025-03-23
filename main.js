@@ -1,12 +1,13 @@
 var map = L.map('map').setView([27.4420647,-94.772125], 1);
 
-L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.{ext}', {
-  minZoom: 2,
-  updateWhenIdle:false,
-  maxZoom: 4,
-  attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  ext: 'png'
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 2,
+    updateWhenIdle:false,
+    maxZoom:4,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
 
 // Define los límites del mapa (ejemplo)
 var limiteNoroeste = L.latLng(90, -180); // Latitud y longitud del punto noroeste
