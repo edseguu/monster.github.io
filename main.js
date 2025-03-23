@@ -61,6 +61,16 @@ marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink + "</a>");
 
 
 
+const bot = document.getElementById('botonaceptar');
+const dialogo = document.getElementById('popup');
+popup.showModal();
+function cerrar_ventana(){
+    popup.close()
+}
+
+
+
+
 
 
 
