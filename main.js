@@ -10,7 +10,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 // Define los límites del mapa (ejemplo)
-var limiteNoroeste = L.latLng(90, -180); // Latitud y longitud del punto noroeste
+var limiteNoroeste = L.latLng(78, -180); // Latitud y longitud del punto noroeste
 var limiteSureste = L.latLng(-60, 180); // Latitud y longitud del punto sureste
 var limites = L.latLngBounds(limiteSureste, limiteNoroeste);
 
