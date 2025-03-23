@@ -82,6 +82,7 @@ body{
   bottom: 10%;
   height: 50vh; 
   width: 100%;
+  z-index: 2;
 }
 
 
