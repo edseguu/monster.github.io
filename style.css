@@ -97,6 +97,76 @@ body{
 
 
 
+#popup{
+  position: fixed;
+  bottom: 50px;
+  width: 250px;
+  height: 450px;
+  z-index: 3;
+  border: none;
+  border-radius: 25px;
+  padding: 5px;
+  overflow: hidden;
+
+}
+#popup::backdrop{
+  background-color: rgba(26, 32, 25, 0.849);
+}
+
+
+#botonaceptar {
+  position: relative;
+  top: 400px;
+  left: 19%;
+  font-size: 1.5rem;
+  color: #fafafa;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #fafafa;
+  background: #102b00;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#aviso{
+  position: absolute;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 39px;
+  left: 70px;
+  bottom: 360px;
+  color: #04580b;
+}
+#texto{
+  position: absolute;
+  top: 90px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  color: #191b19;
+
+}
+
+#murcielago{
+  position: absolute;
+  height: 199px;
+
+  transform: rotate(25deg);
+  top: 220px;
+  left: 0px;
+  z-index: 0;
+}
+
+#botonaceptar:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+
+
+
 
 /*----------Pagina 1*/
 #contenedor{
