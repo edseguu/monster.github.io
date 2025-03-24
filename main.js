@@ -21,6 +21,18 @@ var limites = L.latLngBounds(limiteSureste, limiteNoroeste);
 // Establece los límites en el mapa
 map.setMaxBounds(limites);
 
+//iconos marker
+var icoFan =L.icon({
+    iconUrl: 'assets/fantasma.png',
+
+    iconSize: [50,50],
+
+
+})
+
+
+
+
 
 
 var marker = L.marker([40.1531536, -3.4482965]).addTo(map);
@@ -31,7 +43,7 @@ var textoLink = "ESPAÑA"; // Texto que se mostrará como enlace
 marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink + "</a>");//españa
 
 
-var marker = L.marker([19.6214153, -99.6028058]).addTo(map);
+var marker = L.marker([19.6214153, -99.6028058], {icon: icoFan}).addTo(map);
 
 var url = "pagina1.html"; // Reemplaza con tu URL deseada
 var textoLink = "MÉXICO"; // Texto que se mostrará como enlace
