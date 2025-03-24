@@ -1,12 +1,16 @@
 var map = L.map('map').setView([27.4420647,-94.772125], 1);
 
 
+
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	minZoom: 2,
+	minZoom: 1.9,
     updateWhenIdle:false,
-    maxZoom:4,
+    zoomControls: false,
+    maxZoom:3,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+
 
 
 // Define los límites del mapa (ejemplo)
@@ -32,7 +36,7 @@ var marker = L.marker([19.6214153, -99.6028058]).addTo(map);
 var url = "pagina1.html"; // Reemplaza con tu URL deseada
 var textoLink = "MÉXICO"; // Texto que se mostrará como enlace
 
-marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink + "</a>");//mexico
+marker.bindPopup("<a href='" + url + "' target='_self'>" + textoLink + "</a>");//mexico
 
 var marker = L.marker([41.3940536, -101.2571840]).addTo(map);
 
@@ -59,22 +63,26 @@ marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink + "</a>");
 
 
 
+//---INICIO de popup de pagina inicial
 
-
-const bot = document.getElementById('botonaceptar');
 const dialogo = document.getElementById('popup');
-popup.showModal();
+
+// Comprobamos si la bandera 'skipPopup' está en sessionStorage
+if (sessionStorage.getItem('skipPopup') !== 'true') {
+  popup.showModal();
+} else {
+  // Si la bandera está presente, la eliminamos para futuras visitas normales
+  sessionStorage.removeItem('skipPopup');
+}
+
 function cerrar_ventana(){
     popup.close()
 }
-
-
-
-
-
-
-
-
+//---FINAL de popup de pagina inicial
+function pagMapa(){
+    sessionStorage.setItem('skipPopup', 'true');
+    window.open("index.html", "_self");
+};
 
 
 
@@ -99,6 +107,7 @@ function randomBlink() {
 }
 
 randomBlink(); // Iniciar el parpadeo aleatorio
+
 
 
 
