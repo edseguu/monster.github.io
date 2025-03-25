@@ -1,7 +1,7 @@
 body{
   background-color: rgb(11, 19, 7);
 }
-.container {
+.containerL {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -227,11 +227,11 @@ body{
 
 #video{
   position: fixed;
-  top: 100px;
+  top: 90px;
   left: 50%;
   transform: translateX(-50%);
-  height: 145vw;
-  z-index: 1;
+  width: 85%;
+  height: auto;
   border-radius: 10px;
 }
 @media screen and (orientation: landscape){
@@ -249,34 +249,14 @@ body{
 }
 
 
-#titu {
-  z-index: 2;
-  position: fixed;
-  margin: 0;
-  top: 0;
-  font-family: "Boldonse", system-ui;
-  font-weight: 300;
-  font-style: normal;
-  color: #fffffff5; /* Color inicial de las letras */
-  font-size: 28px;
-  text-shadow: 0 0 10px rgb(55, 56, 56); /* Iluminación inicial */
-  animation: blink-color-peak 1.5s infinite ease-in-out;
-}
 
-@keyframes blink-color-peak {
-  0% {
-    color: #ffffff00;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  }
-  50% {
-    color: rgba(255, 255, 255, 0.767); /* Cambia a amarillo en el punto máximo de la iluminación */
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
-  }
-  100% {
-    color: #ffffff44;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  }
-}
+
+
+
+
+
+
+
 
 
 #bandera{
@@ -334,8 +314,291 @@ body{
 }
 
 #banner{
-  background-color: #132408;
+  background-color: rgba(34, 65, 28, 0.349);
+  border: 1px solid rgba(0, 0, 0, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   position: absolute;
   width: 100vw;
-  height: 14vw;
+  height: 17vw;
+  top: 0px;
+}
+
+
+
+
+
+/*portadas*/
+body{
+  overflow-x: hidden;
+}
+
+#portadasdialog{
+  width: 100vw;
+  position: fixed;
+  height: 100vh;
+  top: 0px;
+  background-color: #072011e1;
+  color: #6d75792a;
+  z-index: 10;
+  overflow: hidden;
+
+
+}
+
+#flechaportada{
+  position: absolute;
+  width: 50px;
+  left: 83vw;
+  top: 95vw;
+
+}
+
+#TituloPortadas{
+  position: absolute;
+  width: 300px;
+  top: 40px;
+  z-index: 200;
+  color: #000000;
+}
+
+#portadas{
+  display: grid;
+  grid-auto-flow:column;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  gap: 200px; /* Espacio entre las imágenes */
+  padding-left: 90px; /* Espacio inicial opcional */
+  padding-right: 90px; /* Espacio final opcional */
+  padding-top: 160px;
+  margin-left: -35px;
+  z-index: 6;
+}
+#portadas::-webkit-scrollbar{
+  display: none;
+}
+
+
+
+/* From Uiverse.io by Samucraft346 */ 
+.card {
+  width: 290px;
+  height: 454px;
+  background-image: linear-gradient(183deg, #000000 0%, #3700ff 100%);
+  border-radius: 2px;
+  transition: all 1.3s;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-snap-align: center;
+
+
+
+}
+
+.card1 {
+  width: 280px;
+  height: 444px;
+  background-image:url(assets/portada2.jpg) ;
+  transition: all 0.2s;
+  border-radius: 20px;
+  z-index: 200;
+  
+}
+.card2 {
+  width: 280px;
+  height: 444px;
+  background-image:url(assets/portada2.jpg) ;
+  transition: all 0.2s;
+  border-radius: 20px;
+  z-index: 200;
+}
+.card3 {
+  width: 280px;
+  height: 444px;
+  background-image:url(assets/portada2.jpg);
+  transition: all 0.2s;
+  border-radius: 20px;
+  z-index: 200;
+}
+.card {
+  width: 280px;
+  height: 444px;
+  background-image:url(assets/portada2.jpg);
+  transition: all 0.2s;
+  border-radius: 20px;
+  z-index: 200;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* From Uiverse.io by joe-watson-sbf */ 
+.container {
+    position: absolute;
+    font-family: sans-serif;
+    animation: blink-color-peak 2.5s infinite ease-in-out;
+    height: 40px;
+    width:0px;
+    z-index: 3;
+    /* min-height: 0vh; Elimina esta línea, no es necesaria para centrar */
+    top: 1%; /* Mueve el borde superior del contenedor al centro vertical */
+    left: -1%; /* Mueve el borde izquierdo del contenedor al centro horizontal *//* Desplaza el contenedor hacia atrás la mitad de su ancho y alto */
+  }
+
+.container::before,
+.container::after {
+  content: "";
+  background-color: #40614a85;
+  position: absolute;
+  left: 10px;
+
+}
+
+.container::before {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  top: 30%;
+
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  right: 5%;
+
+}
+
+.container .box {
+  width: 100vw;
+  height: 4.875em;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0.7rem;
+  transition: all ease 0.3s;
+  z-index: 3;
+
+
+}
+
+.container .box .title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+
+.container .box div p {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+
+.container .box div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: 0.2rem;
+}
+
+.container .box:hover {
+  box-shadow: 0px 0px 50px 40px #81d1883f;
+  border: 1px solid rgba(113, 165, 129, 0.454);
+}
+@keyframes blink-color-peak {
+  0% {
+    color: #5eb45bc0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    color: rgba(255, 255, 255, 0.767); /* Cambia a amarillo en el punto máximo de la iluminación */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    color: #11111123;
+    text-shadow: 0 0 5px rgba(51, 83, 51, 0.5);
+  }
+}
+
+
+
+#flec{
+  position: fixed;
+  left: 300px;
+  z-index: 6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* From Uiverse.io by elijahgummer */ 
+.btn {
+  font: inherit;
+  background-color: #fffffffd;
+  border: 0;
+  color: #000000;
+  font-size: 1.15rem;
+  padding: 0.475em 1em;
+  text-shadow: 0 0.0625em 0 #fff;
+  box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
+    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
+    0 0.375em 0 0 #dcdcdc, 0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
+  transition: 0.23s ease;
+  cursor: pointer;
+  font-weight: bold;
+  margin: -1px;
+  position: relative;
+  left: 15%;
+  
+}
+
+
+
+
+.middle {
+  border-radius: 0px;
+}
+.right {
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+.left {
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+}
+.btn:active {
+  translate: 0 0.225em;
+  box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
+    0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
+    0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
+  letter-spacing: 0.1em;
+  color: skyblue;
+}
+.btn:focus {
+  color: rgb(118, 216, 118);
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba de Carga de Video</title>
+</head>
+<body>
+
+  <dialog id="portadasdialog" open>
+    <div id="portadas">
+      <div class="card">
+        <div class="card1" id="miCarta">Haz clic aquí para cambiar el video</div>
+      </div>
+    </div>
+  </dialog>
+
+  <video id="video" width="320" height="240" controls>
+    <source src="https://res.cloudinary.com/dcwi0nryw/video/upload/v1742725387/n8eennsnfx0ysuu8wdao.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+  </video>
+
+  <script>
+    const carta1 = document.getElementById('miCarta');
+    const videoElement = document.getElementById('video');
+    const newVideoSource = 'https://res.cloudinary.com/prod/video/upload/e_preview:duration_12:max_seg_3/me/preview-coffee.mp4';
+
+    carta1.addEventListener('click', function() {
+      console.log("¡Se hizo clic en la carta!");
+      videoElement.src = newVideoSource;
+      videoElement.load();
+      videoElement.play();
+    });
+  </script>
+
+</body>
+</html>

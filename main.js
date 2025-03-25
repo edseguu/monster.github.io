@@ -6,7 +6,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	minZoom: 1.9,
     updateWhenIdle:false,
     zoomControls: false,
-    maxZoom:3,
+    maxZoom:4,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
@@ -25,22 +25,43 @@ map.setMaxBounds(limites);
 var icoFan =L.icon({
     iconUrl: 'assets/fantasma.png',
 
-    iconSize: [50,50],
+    iconSize: [40,40],
 
 
 })
 
 
+var marker = L.marker([46.9696141,6.406614,7], {icon: icoFan}).addTo(map);
+
+var url = "https://www.google.com"; // Reemplaza con tu URL deseada
+var textoLink1 = "ESPAÑA "; // Texto que se mostrará como enlace
+var textoLink2 = "ESPAÑA "; // Texto que se mostrará como enlace
+var textoLink3 = "ESPAÑA 3"; // Texto que se mostrará como enlace
+var textoLink4 = "ESPAÑA 4"; // Texto que se mostrará como enlace
+
+
+marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink1 + "  " + textoLink2 + "</a>");//
 
 
 
-
-var marker = L.marker([40.1531536, -3.4482965]).addTo(map);
+var marker = L.marker([40.1531536, -3.4482965], {icon: icoFan}).addTo(map);
 
 var url = "https://www.google.com"; // Reemplaza con tu URL deseada
 var textoLink = "ESPAÑA"; // Texto que se mostrará como enlace
 
 marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink + "</a>");//españa
+
+
+
+
+var marker = L.marker([39.6443853,-8.1245517], {icon: icoFan}).addTo(map);
+
+var url = "https://www.google.com"; // Reemplaza con tu URL deseada
+var textoLink = "ESPAÑA"; // Texto que se mostrará como enlace
+
+marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink + "</a>");//
+
+
 
 
 var marker = L.marker([19.6214153, -99.6028058], {icon: icoFan}).addTo(map);
@@ -91,11 +112,25 @@ function cerrar_ventana(){
     popup.close()
 }
 //---FINAL de popup de pagina inicial
+
+
+
+
 function pagMapa(){
     sessionStorage.setItem('skipPopup', 'true');
     window.open("index.html", "_self");
 };
 
+function historias(){
+  const videoElement = document.getElementById('video');
+  const dialogo = document.getElementById('portadasdialog');
+  dialogo.showModal({
+    
+  })
+  videoElement.pause();
+
+
+}
 
 
 
@@ -121,5 +156,46 @@ function randomBlink() {
 randomBlink(); // Iniciar el parpadeo aleatorio
 
 
+function playVideo(videoUrl) {
+  const ventana = document.getElementById('portadasdialog');
+  const videoElement = document.getElementById('video'); // Obtén el elemento dentro de la función
+  console.log("Se hizo clic en una carta. URL del video:", videoUrl);
+  if (videoElement) {
+    videoElement.src = videoUrl;
+    videoElement.load();
+    ventana.close()
+  } else {
+    console.error("No se encontró el elemento de video.");
+  }
+  videoElement.play()//revisión
+}
 
+function scrollRightInContainer() {
+  const contenedor = document.getElementById('portadas');
+  const scrollAmount = 300;
 
+  if (contenedor) {
+    contenedor.scrollBy({
+      left: scrollAmount,
+      top: 0,
+      behavior: 'smooth'
+    });
+  } else {
+    console.error("No se encontró el contenedor con el ID 'portadas'");
+  }
+}
+
+const portadas = document.getElementById('portadas');
+
+portadas.addEventListener('scroll', function() {
+  console.log("¡El evento de scroll se ha disparado!");
+  console.log("ScrollLeft:", portadas.scrollLeft);
+  console.log("ScrollWidth:", portadas.scrollWidth);
+  console.log("Mitad de ScrollWidth:", portadas.scrollWidth / 2);
+
+  if (portadas.scrollLeft >= portadas.scrollWidth / 2) {
+    console.log("¡Llegamos a la mitad!");
+    portadas.scrollLeft = 0;
+    console.log("ScrollLeft después de reset:", portadas.scrollLeft);
+  }
+});
