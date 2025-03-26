@@ -124,12 +124,8 @@ function pagMapa(){
 function historias(){
   const videoElement = document.getElementById('video');
   const dialogo = document.getElementById('portadasdialog');
-  dialogo.showModal({
-    
-  })
+  dialogo.open =true;
   videoElement.pause();
-
-
 }
 
 
@@ -156,18 +152,38 @@ function randomBlink() {
 randomBlink(); // Iniciar el parpadeo aleatorio
 
 
-function playVideo(videoUrl) {
+function playVideo(elementoClicado, videoUrl) {
   const ventana = document.getElementById('portadasdialog');
-  const videoElement = document.getElementById('video'); // Obtén el elemento dentro de la función
+  const videoElement = document.getElementById('video'); 
+  const ojoElement = document.getElementById('ojos');
+  const botontitulo = document.querySelector('.btn.middle')
+  
+
+
+
+  if (elementoClicado.dataset.cardId) {
+    console.log("Se hizo clic en la card con ID:", elementoClicado.dataset.cardId);
+  }
+
   console.log("Se hizo clic en una carta. URL del video:", videoUrl);
+
+  
+  
   if (videoElement) {
+    ojoElement.style.display = 'none'
+    videoElement.style.display = "block";
     videoElement.src = videoUrl;
     videoElement.load();
     ventana.close()
-  } else {
-    console.error("No se encontró el elemento de video.");
-  }
+    botontitulo.textContent = elementoClicado.dataset.cardId
+  } if(videoUrl === "none"){
+
+    videoElement.style.display = "none";
+    ojoElement.style.display = 'grid'
+    console.log("NO");
+  } 
   videoElement.play()//revisión
+
 }
 
 function scrollRightInContainer() {
@@ -184,6 +200,26 @@ function scrollRightInContainer() {
     console.error("No se encontró el contenedor con el ID 'portadas'");
   }
 }
+function scrollLeftInContainer() {
+  const contenedor = document.getElementById('portadas');
+  const scrollAmount = -300;
+
+  if (contenedor) {
+    contenedor.scrollBy({
+      left: scrollAmount,
+      top: 0,
+      behavior: 'smooth'
+    });
+  } else {
+    console.error("No se encontró el contenedor con el ID 'portadas'");
+  }
+}
+
+
+
+
+
+
 
 const portadas = document.getElementById('portadas');
 
@@ -199,3 +235,8 @@ portadas.addEventListener('scroll', function() {
     console.log("ScrollLeft después de reset:", portadas.scrollLeft);
   }
 });
+
+
+
+
+

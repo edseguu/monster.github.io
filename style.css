@@ -346,13 +346,34 @@ body{
 
 }
 
-#flechaportada{
-  position: absolute;
-  width: 50px;
-  left: 83vw;
-  top: 95vw;
+#mapaPortada{
+  position:absolute;
+  left: 65%;
+  top: 110px;
+  width: 28vw;
+  height: 7vw;
 
 }
+
+#mapaPortada {
+  color: #ffffff;
+  padding: 0em 0em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background-color: rgba(165, 218, 154, 0.178);
+  border: 1px solid rgba(71, 95, 64, 0.973);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  text-align: center;
+}
+
+#mapaPortada:active {
+  color: #333333;
+  box-shadow: inset 4px 4px 12px #94c0a1, inset -4px -4px 12px #04440df5;
+}
+
+
+
 
 #TituloPortadas{
   position: absolute;
@@ -361,6 +382,9 @@ body{
   z-index: 200;
   color: #000000;
 }
+
+
+
 
 #portadas{
   display: grid;
@@ -377,40 +401,46 @@ body{
 #portadas::-webkit-scrollbar{
   display: none;
 }
+@media (max-height: 800px) {
+  #portadas {
+    padding-top: 130px;
+  }
+}
+
+
 
 
 
 /* From Uiverse.io by Samucraft346 */ 
 .card {
-  width: 290px;
-  height: 454px;
-  background-image: linear-gradient(183deg, #000000 0%, #3700ff 100%);
-  border-radius: 2px;
-  transition: all 1.3s;
+  width: 70vw;
+  height: 80%;
   display: grid;
   justify-content: center;
   align-items: center;
-  overflow-x:auto;
+  overflow-x:hidden;
+  overflow-y: hidden;
   scroll-snap-type:x mandatory;
   scroll-snap-align: center;
-
 
 
 }
 
 .card1 {
   width: 280px;
-  height: 444px;
-  background-image:url(assets/portada2.jpg) ;
-  transition: all 0.2s;
-  border-radius: 20px;
-  z-index: 200;
+  height: 100%;
+  background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742979963/Portadallorona_xmrh0p.png);
+  background-size: 100%;
+  background-repeat:no-repeat;
+  z-index: 20;
   
 }
 .card2 {
-  width: 100%;
-  height: 100%;
-  background-image:url(assets/Portadallorona.png) ;
+  width: 280px;
+  height: 444px;
+  background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742988396/cooming_vkkpck.webp) ;
+  background-size:contain;
+  background-repeat: round;
   transition: all 0.2s;
   border-radius: 20px;
   z-index: 200;
@@ -418,11 +448,117 @@ body{
 .card3 {
   width: 280px;
   height: 444px;
-  background-image:url(assets/portada2.jpg);
+  background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742988396/cooming_vkkpck.webp);
+  background-size:contain;
+  background-repeat: round;
   transition: all 0.2s;
   border-radius: 20px;
   z-index: 200;
 }
+.card4 {
+  width: 280px;
+  height: 444px;
+  background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742988396/cooming_vkkpck.webp);
+  background-size:contain;
+  background-repeat: round;
+  transition: all 0.2s;
+  border-radius: 20px;
+  z-index: 200;
+}
+
+.buttonportadasd {
+  --font-color: #323232;
+  --bg-color: #fff;
+  --main-color: #6c8f71;
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--font-color);
+
+
+
+}
+.buttonportadasi {
+  --font-color: #323232;
+  --bg-color: #fff;
+  --main-color: #6c8f71;
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: -4px 4px var(--main-color);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--font-color);
+
+  text-align:center;
+
+
+}
+
+
+
+
+.buttonportadasd:active {
+  box-shadow: 0px 0px var(--main-color);
+  transform: translate(3px, 3px);
+}
+.buttonportadasi:active {
+  box-shadow: 0px 0px var(--main-color);
+  transform: translate(3px, 3px);
+}
+
+#botonesportadas{
+  position: relative;
+  left: 5%;
+  z-index: 200;
+  top: 80%;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+}
+@media (max-width: 360px) {
+  #botonesportadas {
+    gap: 32px;
+    left: 1%;
+  }
+}
+
+@media (max-height: 844px) {
+  #botonesportadas {
+    top: 86%;
+  }
+}
+@media (max-height: 812px) {
+  #botonesportadas {
+    top: 89%;
+  }
+}
+@media (min-height: 1000px) {
+  #botonesportadas {
+    top: 57%;
+  }
+}
+@media (max-height: 900px) {
+  #botonesportadas {
+    top: 69%;
+  }
+}
+@media (max-height: 800px) {
+  #botonesportadas {
+    top: 89%;
+  }
+}
+
+
+
+
 
 
 
@@ -594,3 +730,143 @@ body{
 .btn:focus {
   color: rgb(118, 216, 118);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* From Uiverse.io by FWDJc */ 
+.eye-lid {
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 9px 0 2px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  height: 150px;
+  z-index: 1;
+}
+
+.eye {
+  background-color: #ffbc03;
+  border-radius: 50%;
+  transform: translate3d(0, 0, 0) rotate(90deg);
+  width: 120px;
+  height: 120px;
+  animation: eye 5s infinite;
+  z-index: 30;
+}
+
+@keyframes eye {
+  12%,
+  25% {
+    width: 100px;
+    height: 110px;
+  }
+
+  37%, 
+  50% {
+    width: 60px;
+    height: 130px;
+  }
+
+  63%, 
+  75% {
+    width: 100px;
+    height: 103px;
+  }
+
+  87% {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.cornea {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: eye-color 5s infinite;
+  z-index: 30;
+}
+
+@keyframes eye-color {
+  63%, 75% {
+    background-color: rgb(8, 20, 96);
+  }
+}
+
+.white-pupil {
+  position: absolute;
+  top: 9%;
+  left: 10%;
+  border-radius: 50%;
+  background-color: #ffbc03;
+  width: 20px;
+  height: 20px;
+  z-index: 30;
+}
+
+#ojos{
+  position: absolute;
+  bottom: 55vh;
+  left: 7%;
+  display: grid;
+  grid-auto-flow:column;
+  display: none;
+  gap: 75px;
+}
+
+@media (max-width: 435px) {
+  #ojos {
+    gap: 30px;
+  }
+}
+@media (max-width: 360px) {
+  #ojos {
+    gap: 20px;
+  }
+}
+#prox{
+  position: absolute;
+  top: 30vh;
+  left: 3vw;
+  color: #ffffff;
+  font-family: "Creepster", system-ui;
+  font-weight: 40;
+  font-style: normal;
+  font-size: 60px;
+}
+@media (max-width: 435px) {
+  #prox {
+    font-size: 55px;
+  }
+}
+@media (max-width: 360px) {
+  #prox {
+    font-size: 50px;
+  }
+}
+
+
+

@@ -2,51 +2,67 @@
 <html>
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=none">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="style.css">
     <meta id="or" name="screen-orientation" content="portrait">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <title>Title</title>
   </head>
 
 
+
   <dialog id="portadasdialog" open>
+
+    <div id="botonesportadas">
+      <button class="buttonportadasi" onclick="scrollLeftInContainer()">Anterior</button>
+      <button class="buttonportadasd" onclick="scrollRightInContainer()">Siguiente</button>
+    </div>
+
+
+
+
+
     <div class="container">
       <div class="box">
+        <button id="mapaPortada" onclick="pagMapa()">Mapa</button>
         <span class="title">Selecciona la historia</span>
+
 
       </div>
     </div>
-    <img id="flechaportada" src="assets/flecha-correcta.png" onclick="scrollRightInContainer()">
     
     <div id="portadas">
+      
 
       <div class="card">
-        <div class="card1 video-card" id="miCarta" data-video-url="https://res.cloudinary.com/prod/video/upload/e_preview:duration_12:max_seg_3/me/preview-coffee.mp4" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card1 video-card" data-card-id="La llorona"  data-video-url="https://res.cloudinary.com/dcwi0nryw/video/upload/v1742725387/n8eennsnfx0ysuu8wdao.mp4" onclick="playVideo(this, this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card2 video-card"  data-video-url="https://res.cloudinary.com/dcwi0nryw/video/upload/v1742725387/n8eennsnfx0ysuu8wdao.mp4" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card2 video-card" data-card-id="2" data-video-url="none" onclick="playVideo(this, this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card3 video-card" data-video-url="https://otra-url-de-video.mp4" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card3 video-card" data-video-url="none" onclick="playVideo(this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card4 video-card" data-video-url="https://otra-url-de-video.mp4" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card4 video-card" data-video-url="none" onclick="playVideo(this.dataset.videoUrl)"></div>
       </div>
 
       <div class="card">
-        <div class="card1 video-card" id="miCarta" data-video-url="https://res.cloudinary.com/prod/video/upload/e_preview:duration_12:max_seg_3/me/preview-coffee.mp4" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card1 video-card" data-card-id="La llorona"  data-video-url="https://res.cloudinary.com/dcwi0nryw/video/upload/v1742725387/n8eennsnfx0ysuu8wdao.mp4" onclick="playVideo(this, this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card2 video-card"  data-video-url="https://res.cloudinary.com/dcwi0nryw/video/upload/v1742725387/n8eennsnfx0ysuu8wdao.mp4" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card2 video-card"  data-video-url="none" onclick="playVideo(this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card3 video-card" data-video-url="https://otra-url-de-video.mp4" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card3 video-card" data-video-url="none" onclick="playVideo(this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card4 video-card" data-video-url="https://otra-url-de-video.mp4" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card4 video-card" data-video-url="none" onclick="playVideo(this.dataset.videoUrl)"></div>
       </div>
   </div>
   </dialog>
@@ -54,6 +70,24 @@
 
   <body id="pagina1">
 
+  <div id="ojos">
+    <div class="eye-lid">
+      <div class="eye">
+        <div class="cornea">
+          <div class="white-pupil"></div>
+        </div>
+      </div>
+    </div>
+    <div class="eye-lid">
+      <div class="eye">
+        <div class="cornea">
+          <div class="white-pupil"></div>
+        </div>
+      </div>
+    </div>
+
+    <h1 id='prox'>Proximamente...</h1>
+  </div>
 
 
     <div id="banner">
@@ -61,22 +95,15 @@
 
     <div class="btn-group">
       <button class="btn left" type="button" onclick="historias()">Historias</button>
-      <button class="btn middle" type="button">_____</button>
+      <button class="btn middle" type="button"></button>
       <button class="btn right" type="button" onclick="pagMapa()">Mapa</button>
     </div>
     
     </div>
 
 
-  <video id="video" muted  controls src="https://res.cloudinary.com/dcwi0nryw/video/upload/v1742725387/n8eennsnfx0ysuu8wdao.mp4">
+  <video id="video" muted controls data-autor="">
   </video>
-  <!--<img
-  id="bandera"
-  src="https://flagcdn.com/w40/mx.png"
-  srcset="https://flagcdn.com/w80/mx.png 2x"
-
-  alt="México">-->
-
 
 
  <script src="main.js"></script>
@@ -85,3 +112,4 @@
 
   </body>
 </html>
+
