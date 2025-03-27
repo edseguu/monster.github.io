@@ -601,6 +601,12 @@ body{
     top: 89%;
   }
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  #botonesportadas{
+    top:83%;
+
+  }
+}
 
 
 
