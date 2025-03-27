@@ -473,6 +473,11 @@ body{
   color: #333333;
   box-shadow: inset 4px 4px 12px #94c0a1, inset -4px -4px 12px #04440df5;
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 3){
+  #mapaPortada{
+    background-color: #29462d;
+  }
+}
 
 
 
@@ -597,6 +602,11 @@ body{
   }
 }
 @media (max-height: 800px) {
+  #botonesportadas {
+    top: 89%;
+  }
+}
+@media (max-height: 665px) {
   #botonesportadas {
     top: 89%;
   }
