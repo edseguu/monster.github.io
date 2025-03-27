@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta id="or" name="screen-orientation" content="portrait">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="style.css">
-    <meta id="or" name="screen-orientation" content="portrait">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portdasllorona.css"> 
+
+
     <title>Title</title>
   </head>
 
@@ -43,26 +51,26 @@
         <div class="card1 video-card" data-card-id="La llorona"  data-video-url="https://res.cloudinary.com/dcwi0nryw/video/upload/v1742725387/n8eennsnfx0ysuu8wdao.mp4" onclick="playVideo(this, this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card2 video-card" data-card-id="2" data-video-url="none" onclick="playVideo(this, this.dataset.videoUrl)"></div>
+        <div class="card2 video-card" data-card-id="none" data-video-url="none" onclick="playVideo(this, this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card3 video-card" data-video-url="none" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card3 video-card" data-card-id="none" data-video-url="none" onclick="playVideo(this,this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card4 video-card" data-video-url="none" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card4 video-card" data-card-id="none" data-video-url="none" onclick="playVideo(this,this.dataset.videoUrl)"></div>
       </div>
 
       <div class="card">
         <div class="card1 video-card" data-card-id="La llorona"  data-video-url="https://res.cloudinary.com/dcwi0nryw/video/upload/v1742725387/n8eennsnfx0ysuu8wdao.mp4" onclick="playVideo(this, this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card2 video-card"  data-video-url="none" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card2 video-card" data-card-id="none" data-video-url="none" onclick="playVideo(this, this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card3 video-card" data-video-url="none" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card3 video-card" data-card-id="none" data-video-url="none" onclick="playVideo(this,this.dataset.videoUrl)"></div>
       </div>
       <div class="card">
-        <div class="card4 video-card" data-video-url="none" onclick="playVideo(this.dataset.videoUrl)"></div>
+        <div class="card4 video-card" data-card-id="none" data-video-url="none" onclick="playVideo(this,this.dataset.videoUrl)"></div>
       </div>
   </div>
   </dialog>
@@ -90,22 +98,31 @@
   </div>
 
 
-    <div id="banner">
       
 
     <div class="btn-group">
-      <button class="btn left" type="button" onclick="historias()">Historias</button>
-      <button class="btn middle" type="button"></button>
-      <button class="btn right" type="button" onclick="pagMapa()">Mapa</button>
+      <button class="btn left" type="button" ondblclick="confe()"></button>
+    </div>
+
+
+
+
+    <div class="radio-inputs">
+      <label class="radio">
+        <input type="radio" name="radio" onclick="historias()"/>
+        <span class="name">Historias</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="radio" onclick="pagMapa()"/>
+        <span class="name">Mapa</span>
+      </label>
     </div>
     
-    </div>
 
-
-  <video id="video" muted controls data-autor="">
+  <video id="video" controls data-autor="">
   </video>
 
-
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
  <script src="main.js"></script>
  
 

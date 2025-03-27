@@ -1,5 +1,8 @@
 body{
-  background-color: rgb(11, 19, 7);
+  background: linear-gradient(45deg,transparent 14%, #0d2704 15%, #0d2704 20%, transparent 21%, transparent 79%, #0d2704  80%, #0d2704 85%, transparent 86%),linear-gradient(135deg,transparent 14%, #0d2704 15%, #0d2704 20%, transparent 21%, transparent 79%, #0d2704  80%, #0d2704 85%, transparent 86%), radial-gradient(transparent 14%, #0d2704 15%, #0d2704 25%, transparent 26%);
+  background-size: 3em 3em;
+  background-color: #253221;
+  opacity: 1
 }
 .containerL {
   display: flex;
@@ -32,7 +35,7 @@ body{
 }
 
 .lamp-container.off .lamp-image {
-  opacity: 0.4; /* Ligeramente oscurecido cuando "apagado" */
+  opacity: 0.6; /* Ligeramente oscurecido cuando "apagado" */
 }
 
 
@@ -43,7 +46,7 @@ body{
   transform: translateX(-50%);
   width: 220px; /* Ancho del haz de luz */
   height: 190px; /* Largo del haz de luz */
-  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(241, 255, 236, 0.767) 0%, rgba(255, 255, 255, 0) 70%);
   filter: blur(15px);
   opacity: 1;
   pointer-events: none;
@@ -57,17 +60,17 @@ body{
 
 .illuminated-text {
   font-size: 4em;
-  color: #ddd;
-  opacity: 0.3;
+  color: #ffffff;
+  opacity: 0.2;
   text-align: center;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 10px rgba(241, 241, 241, 0.5);
   margin: 0;
   transition: color 0.3s ease-in-out, text-shadow 0.2s ease-in-out; /* Transición suave para el parpadeo */
 }
 
 .illuminated-text.lit {
-  color: #fff;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(206, 255, 202, 0.842);
   opacity: 1;
   
 }
@@ -136,7 +139,7 @@ body{
   font-size: 39px;
   left: 70px;
   bottom: 360px;
-  color: #04580b;
+  color: #4faa2b;
 }
 #texto{
   position: absolute;
@@ -166,6 +169,44 @@ body{
 }
 
 
+.info {
+  width: 100px;
+  padding: 7px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  background: #6986694d;
+  border-radius:13px;
+  position:absolute;
+  top:1vh;
+  text-align: center;
+}
+
+.info__icon {
+  width: 17px;
+  height: 17px;
+  transform: translateY(-2px);
+  margin-right: 9px;
+}
+
+.info__icon path {
+  fill: #6ba069b0;
+}
+
+.info__title {
+  font-weight: 500;
+  font-size: 12px;
+  color: #fbfff9d3;
+}
+
+
+
+
+
+
+
+
 
 
 /*----------Pagina 1*/
@@ -186,7 +227,7 @@ body{
   margin: 0;
   background: linear-gradient(45deg, #424c3c 10%,transparent 10%,transparent 90%,#424c3c 90%),linear-gradient(135deg, transparent 40%, #424c3c80 40%, #424c3c80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #424c3c 40%, #424c3c 60%, transparent 0);
   background-size: 5em 5em;
-  background-color: #131313;
+  background-color: #1e271e;
   opacity: 1
 }
 
@@ -209,7 +250,8 @@ body{
   position: fixed;
   top: 50%;
   left: 0px;
-  transform: translateY(-50%);z-index: 2;
+  transform: translateY(-50%);
+  z-index: 2;
   /* Estilos adicionales */
 }
 
@@ -225,14 +267,30 @@ body{
   z-index: 2;
 }
 
+
+
+
+
+
+
+
+/*Inicio de la parte del video, banner, botón modificable del texto del titulo del video 
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+*/
+
+
+
 #video{
   position: fixed;
-  top: 90px;
+  top: 115px;
   left: 50%;
   transform: translateX(-50%);
-  width: 85%;
+  width: 80%;
   height: auto;
   border-radius: 10px;
+  z-index: 2;
 }
 @media screen and (orientation: landscape){
   #video{
@@ -250,79 +308,123 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
-#bandera{
-  display: flex;
-  position: relative;
-  left: 180px;
-  top: 19px;
-}
-
-/* From Uiverse.io by vinodjangid07 */ 
-.button {
-  width: 100px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 30px;
-  color: rgb(0, 0, 0);
-  font-weight: 600;
+.btn {
   border: none;
-  position: relative;
-  left: 260px;
-  top: -10px;
-  cursor: pointer;
-  transition-duration: .2s;
-  box-shadow: 5px 5px 10px rgba(37, 37, 37, 0.116);
-  padding-left: 8px;
-  transition-duration: .5s;
-}
+  outline: none;
+  background-color: #549751e5;
+  padding: 15px 21px;
+  font-size: 19px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 5px;
 
-.svgIcon {
-  height: 25px;
-  transition-duration: 1.5s;
-}
-
-.bell path {
-  fill: rgb(0, 0, 0);
-}
-
-.button:hover {
-  background-color: rgb(160, 160, 159);
-  transition-duration: .5s;
-}
-
-.button:active {
-  transform: scale(0.97);
-  transition-duration: .2s;
-}
-
-.button:hover .svgIcon {
-  transform: rotate(250deg);
-  transition-duration: 1.5s;
-}
-
-#banner{
-  background-color: rgba(34, 65, 28, 0.349);
-  border: 1px solid rgba(0, 0, 0, 0.222);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  box-shadow: 0px 5px 0px 0px #064109;
   position: absolute;
-  width: 100vw;
-  height: 17vw;
-  top: 0px;
+  left: 53%;
+  top: 10%;
 }
+
+@media(max-height:870px){
+  .btn{
+    top:69px;
+  }
+  
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0px 0px 0px 0px #77af75;
+}
+
+
+
+
+
+
+
+/* From Uiverse.io by Spacious74 */ 
+.radio-inputs {
+  position: relative;
+  display: flex;
+  border-radius: 0rem;
+  background-color: #5f7c68c2;
+  box-sizing: border-box;
+  font-size: 14px;
+  width: 100%;
+  padding: 0.5rem 1rem 0rem 1rem;
+  gap: 20px;
+}
+
+.radio-inputs .radio input {
+  display:none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: none;
+  padding: 0.5rem 1rem;
+  transition: all 0.25s ease-in-out;
+  position: relative;
+  color: white;
+  font-size: 20px;
+  background-color: #889e7bc4;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: #33642e;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+.radio-inputs .radio input + .name:hover {
+  color: #faf7f7;
+}
+.radio-inputs .radio input:checked + .name:hover {
+  color: #ffffff;
+}
+
+.radio-inputs .radio input:checked + .name::after,
+.radio-inputs .radio input:checked + .name::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #5f7c6800;
+  bottom: 0;
+
+}
+
+.radio-inputs .radio input:checked + .name::after {
+  right: -10px;
+  border-bottom-left-radius: 300px;
+  box-shadow: -3px 3px 0px 3px #625f7c00;
+}
+.radio-inputs .radio input:checked + .name::before {
+  left: -10px;
+  border-bottom-right-radius: 300px;
+  box-shadow: 3px 3px 0px 3px #5f7c6800;
+
+}
+
+
+
+
+/*FInal de la parte del video, banner, botón modificable del texto del titulo del video 
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
 
 
 
@@ -409,62 +511,6 @@ body{
 
 
 
-
-
-/* From Uiverse.io by Samucraft346 */ 
-.card {
-  width: 70vw;
-  height: 80%;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  overflow-x:hidden;
-  overflow-y: hidden;
-  scroll-snap-type:x mandatory;
-  scroll-snap-align: center;
-
-
-}
-
-.card1 {
-  width: 280px;
-  height: 100%;
-  background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742979963/Portadallorona_xmrh0p.png);
-  background-size: 100%;
-  background-repeat:no-repeat;
-  z-index: 20;
-  
-}
-.card2 {
-  width: 280px;
-  height: 444px;
-  background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742988396/cooming_vkkpck.webp) ;
-  background-size:contain;
-  background-repeat: round;
-  transition: all 0.2s;
-  border-radius: 20px;
-  z-index: 200;
-}
-.card3 {
-  width: 280px;
-  height: 444px;
-  background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742988396/cooming_vkkpck.webp);
-  background-size:contain;
-  background-repeat: round;
-  transition: all 0.2s;
-  border-radius: 20px;
-  z-index: 200;
-}
-.card4 {
-  width: 280px;
-  height: 444px;
-  background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742988396/cooming_vkkpck.webp);
-  background-size:contain;
-  background-repeat: round;
-  transition: all 0.2s;
-  border-radius: 20px;
-  z-index: 200;
-}
 
 .buttonportadasd {
   --font-color: #323232;
@@ -684,58 +730,6 @@ body{
 
 
 
-/* From Uiverse.io by elijahgummer */ 
-.btn {
-  font: inherit;
-  background-color: #fffffffd;
-  border: 0;
-  color: #000000;
-  font-size: 1.15rem;
-  padding: 0.475em 1em;
-  text-shadow: 0 0.0625em 0 #fff;
-  box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
-    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
-    0 0.375em 0 0 #dcdcdc, 0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
-  transition: 0.23s ease;
-  cursor: pointer;
-  font-weight: bold;
-  margin: -1px;
-  position: relative;
-  left: 15%;
-  
-}
-
-
-
-
-.middle {
-  border-radius: 0px;
-}
-.right {
-  border-top-right-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
-}
-.left {
-  border-top-left-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;
-}
-.btn:active {
-  translate: 0 0.225em;
-  box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
-    0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
-    0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
-  letter-spacing: 0.1em;
-  color: skyblue;
-}
-.btn:focus {
-  color: rgb(118, 216, 118);
-}
-
-
-
-
-
-
 
 
 
@@ -830,7 +824,7 @@ body{
 #ojos{
   position: absolute;
   bottom: 55vh;
-  left: 7%;
+  left: 10%;
   display: grid;
   grid-auto-flow:column;
   display: none;
@@ -849,7 +843,7 @@ body{
 }
 #prox{
   position: absolute;
-  top: 30vh;
+  top: 20vh;
   left: 3vw;
   color: #ffffff;
   font-family: "Creepster", system-ui;

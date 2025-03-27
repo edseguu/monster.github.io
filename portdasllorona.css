@@ -1,0 +1,47 @@
+.card {
+    width: 70vw;
+    height: 80%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    overflow-x:hidden;
+    overflow-y: hidden;
+    scroll-snap-type:x mandatory;
+    scroll-snap-align: center;
+  
+  
+  }
+  
+  .card1 {
+    width: 280px;
+    height: 450px;
+    background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742979963/Portadallorona_xmrh0p.png);
+    background-size: 100%;
+    background-repeat:no-repeat;
+    z-index: 20;
+    
+  }
+  .card2 {
+    width: 280px;
+    height: 450px;
+    background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742988396/cooming_vkkpck.webp) ;
+    background-size:100%;
+    background-repeat: repeat;
+    z-index: 200;
+  }
+  .card3 {
+    width: 280px;
+    height: 450px;
+    background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742988396/cooming_vkkpck.webp) ;
+    background-size:100%;
+    background-repeat: repeat;
+    z-index: 200;
+  }
+  .card4 {
+    width: 280px;
+    height: 450px;
+    background-image:url(https://res.cloudinary.com/dcwi0nryw/image/upload/v1742988396/cooming_vkkpck.webp) ;
+    background-size:100%;
+    background-repeat: repeat;
+    z-index: 200;
+  }

@@ -26,72 +26,31 @@ var icoFan =L.icon({
     iconUrl: 'assets/fantasma.png',
 
     iconSize: [40,40],
-
-
 })
 
+//Función para agregar marcadores en el mapa (latitud,longitud  var del icono   la url de redirección   texto del bindpopup )
+//---------------------------------------------------------------------------------------------------------------------------
+function marcador([posx,posy], icono, url, texto){
+  var marker = L.marker([posx,posy], {icon: icono}).addTo(map);
+  var urlpag = url;
 
-var marker = L.marker([46.9696141,6.406614,7], {icon: icoFan}).addTo(map);
+  marker.bindPopup("<a href='" + urlpag + "' target='_self'>" + texto + "</a>");
 
-var url = "https://www.google.com"; // Reemplaza con tu URL deseada
-var textoLink1 = "ESPAÑA "; // Texto que se mostrará como enlace
-var textoLink2 = "ESPAÑA "; // Texto que se mostrará como enlace
-var textoLink3 = "ESPAÑA 3"; // Texto que se mostrará como enlace
-var textoLink4 = "ESPAÑA 4"; // Texto que se mostrará como enlace
-
-
-marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink1 + "  " + textoLink2 + "</a>");//
+}
 
 
-
-var marker = L.marker([40.1531536, -3.4482965], {icon: icoFan}).addTo(map);
-
-var url = "https://www.google.com"; // Reemplaza con tu URL deseada
-var textoLink = "ESPAÑA"; // Texto que se mostrará como enlace
-
-marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink + "</a>");//españa
+//Final de la función
+//---------------------------------------------------------------------------------------------------------------------------
 
 
 
+//Marcadores llamados por la función------marcador()
 
-var marker = L.marker([39.6443853,-8.1245517], {icon: icoFan}).addTo(map);
-
-var url = "https://www.google.com"; // Reemplaza con tu URL deseada
-var textoLink = "ESPAÑA"; // Texto que se mostrará como enlace
-
-marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink + "</a>");//
+marcador([-23.478330, -102.535787], icoFan, "pagina2.html", "Océano Pacífico");
+marcador([18.952172, -98.487488], icoFan, "pagina1.html", "México");
 
 
 
-
-var marker = L.marker([19.6214153, -99.6028058], {icon: icoFan}).addTo(map);
-
-var url = "pagina1.html"; // Reemplaza con tu URL deseada
-var textoLink = "MÉXICO"; // Texto que se mostrará como enlace
-
-marker.bindPopup("<a href='" + url + "' target='_self'>" + textoLink + "</a>");//mexico
-
-var marker = L.marker([41.3940536, -101.2571840]).addTo(map);
-
-var url = "https://www.google.com"; // Reemplaza con tu URL deseada
-var textoLink = "ESTADOS UNIDOS"; // Texto que se mostrará como enlace
-
-marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink + "</a>");//US
-
-var marker = L.marker([31.4363022, 107.9471031]).addTo(map);
-
-var url = "https://www.google.com"; // Reemplaza con tu URL deseada
-var textoLink = "CHINA"; // Texto que se mostrará como enlace
-
-marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink + "</a>");//china
-
-
-var marker = L.marker([36.2374423, 139.6828261]).addTo(map);
-
-var url = "https://www.google.com"; // Reemplaza con tu URL deseada
-var textoLink = "JAPÓN"; // Texto que se mostrará como enlace
-
-marker.bindPopup("<a href='" + url + "' target='_blank'>" + textoLink + "</a>");//Japón 
 
 
 
@@ -156,7 +115,7 @@ function playVideo(elementoClicado, videoUrl) {
   const ventana = document.getElementById('portadasdialog');
   const videoElement = document.getElementById('video'); 
   const ojoElement = document.getElementById('ojos');
-  const botontitulo = document.querySelector('.btn.middle')
+  const botontitulo = document.querySelector('.btn.left')
   
 
 
@@ -176,13 +135,17 @@ function playVideo(elementoClicado, videoUrl) {
     videoElement.load();
     ventana.close()
     botontitulo.textContent = elementoClicado.dataset.cardId
+    botontitulo.style.display="block"
+
   } if(videoUrl === "none"){
 
     videoElement.style.display = "none";
     ojoElement.style.display = 'grid'
     console.log("NO");
-  } 
-  videoElement.play()//revisión
+  } if (elementoClicado.dataset.cardId === "none") {
+        botontitulo.style.display='none'
+    
+  }//revisión
 
 }
 
@@ -235,6 +198,59 @@ portadas.addEventListener('scroll', function() {
     console.log("ScrollLeft después de reset:", portadas.scrollLeft);
   }
 });
+
+
+
+
+
+//Confetti
+
+
+
+function confe(){
+  confetti({
+    spread: 20,
+    ticks: 30,
+    gravity: 12,
+    decay: 0.70,
+    startVelocity: 20,
+    particleCount: 12,
+    "zIndex": 0,
+    origin: { y: 0.0001 },
+    scalar: 3,
+    shapes: ["image"],
+    shapeOptions: {
+      image: [{
+          src: "assets/dulce-de-halloween (1).png",
+          width: 32,
+          height: 32,
+        },
+        {
+          src: "assets/dulce-de-halloween (2).png",
+          width: 32,
+          height: 32,
+        },
+        {
+          src: "assets/fantasma2.png",
+          width: 32,
+          height: 32,
+        },
+        {
+          src: "assets/payaso.png",
+          width: 32,
+          height: 32,
+        },
+        {
+          src: "assets/gato-negro.png",
+          width: 32,
+          height: 32,
+        },
+      ],
+    },
+  });
+  
+
+}
 
 
 
